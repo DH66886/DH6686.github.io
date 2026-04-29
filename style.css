@@ -1,0 +1,317 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 内测邀请卡片 */
+.invite-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.invite-card h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.invite-card .emoji {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.invite-card .highlight {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+}
+
+.invite-code {
+    background: #f0f0f0;
+    padding: 15px;
+    border-radius: 12px;
+    font-family: monospace;
+    font-size: 20px;
+    letter-spacing: 4px;
+    margin: 20px 0;
+    display: inline-block;
+}
+
+.link {
+    color: #764ba2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* 反馈表单卡片 */
+.feedback-card {
+    background: white;
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.feedback-card h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s;
+    font-family: inherit;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #764ba2;
+    box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.rating {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.rating-star {
+    font-size: 30px;
+    cursor: pointer;
+    color: #ddd;
+    transition: 0.2s;
+}
+
+.rating-star:hover,
+.rating-star.active {
+    color: #ffc107;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.message {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    display: none;
+}
+
+.message.success {
+    background: #d4edda;
+    color: #155724;
+    display: block;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+    display: block;
+}
+
+/* 管理按钮 */
+.admin-btn {
+    background: #6c757d;
+    margin-top: 20px;
+}
+
+/* 管理面板 */
+.admin-panel {
+    background: white;
+    border-radius: 24px;
+    padding: 30px;
+    margin-top: 20px;
+    display: none;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-small {
+    width: auto;
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.delete-btn {
+    background: #dc3545;
+}
+
+.delete-btn:hover {
+    background: #c82333;
+}
+
+/* 统计数据 */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.stat-label {
+    font-size: 12px;
+    margin-top: 5px;
+    opacity: 0.9;
+}
+
+/* 反馈列表 */
+.feedback-item {
+    background: #f8f9fa;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    border-left: 4px solid #764ba2;
+}
+
+.feedback-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.feedback-content {
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.feedback-rating {
+    color: #ffc107;
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+    .invite-card h1 {
+        font-size: 1.8rem;
+    }
+    
+    .feedback-card {
+        padding: 20px;
+    }
+    
+    .admin-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .btn-group {
+        justify-content: center;
+    }
+    
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+}

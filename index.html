@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内测邀请 · 反馈收集</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 内测邀请卡片 -->
+        <div class="invite-card">
+            <div class="emoji">🎉✨🔥</div>
+            <h1>叮咚～恭喜你获得<br><span class="highlight">内测资格</span>！</h1>
+            <p>你是被选中的先锋体验官</p>
+            <div class="invite-code">
+                🎫 邀请码：<strong>INNER-2024</strong>
+            </div>
+            <p>点击下方链接开始内测体验～</p>
+            <p style="margin-top: 20px;">
+                <a href="#" class="link">→ 立即体验 ←</a>
+            </p>
+        </div>
+
+        <!-- 反馈表单卡片 -->
+        <div class="feedback-card">
+            <h2>📝 提交你的反馈</h2>
+            <p class="subtitle">你的建议让我们变得更好</p>
+            
+            <form id="feedbackForm">
+                <div class="form-group">
+                    <label>👤 昵称（选填）</label>
+                    <input type="text" id="name" placeholder="怎么称呼你？">
+                </div>
+                
+                <div class="form-group">
+                    <label>📧 邮箱（选填）</label>
+                    <input type="email" id="email" placeholder="方便我们回复你">
+                </div>
+                
+                <div class="form-group">
+                    <label>⭐ 评分（选填）</label>
+                    <div class="rating" id="rating">
+                        <span class="rating-star" data-rating="1">☆</span>
+                        <span class="rating-star" data-rating="2">☆</span>
+                        <span class="rating-star" data-rating="3">☆</span>
+                        <span class="rating-star" data-rating="4">☆</span>
+                        <span class="rating-star" data-rating="5">☆</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>💬 你的建议或Bug反馈 *</label>
+                    <textarea id="suggestion" placeholder="请详细描述你的建议或遇到的问题..."></textarea>
+                </div>
+                
+                <button type="submit" id="submitBtn">✨ 提交反馈</button>
+            </form>
+            
+            <div id="message" class="message"></div>
+            
+            <button id="toggleAdminBtn" class="admin-btn">🔐 管理反馈</button>
+        </div>
+
+        <!-- 管理面板 -->
+        <div id="adminPanel" class="admin-panel">
+            <div class="admin-header">
+                <h3>📊 反馈管理面板</h3>
+                <div class="btn-group">
+                    <button id="exportBtn" class="btn-small">📥 导出CSV</button>
+                    <button id="clearAllBtn" class="btn-small delete-btn">🗑️ 清空全部</button>
+                </div>
+            </div>
+
+            <div class="stats" id="stats"></div>
+            <div id="feedbackList"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
